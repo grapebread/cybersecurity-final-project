@@ -21,10 +21,10 @@ def encrypt(message, key):
     encryption = np.remainder(encryption, 26) 
     return encryption
 
-def tomatrix(raw_message, key_rows): 
+def tomatrix(input, key_rows): 
     message = []
-    for i in range(0, len(raw_message)):
-        current_letter = (raw_message[i:i+1]).lower()
+    for i in range(0, len(input)):
+        current_letter = (input[i:i+1]).lower()
         if current_letter != ' ': 
             letter_index = tonum(current_letter) 
             message.append(letter_index + 1)

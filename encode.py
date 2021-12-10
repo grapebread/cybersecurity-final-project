@@ -1,8 +1,46 @@
+import math
+import sys
+import string
 import numpy as np
 
-def matrixInv(matrix, modulus):
+from sympy import Matrix
 
-    det = int(np.round(np.linalg.det(matrix)))  
-    determinantInverse = egcd(det, modulus)[1] % modulus  
-    matrix_modulus_inv = determinantInverse * np.round(det * np.linalg.inv(matrix)).astype(int) % modulus  
-    return matrix_modulus_inv
+key = sys.argv[1]
+input = sys.argv[2]
+input = input.lower()
+mode = sys.argv[3]
+mode = mode.lower()
+key_rows = key.shape[0]
+
+
+def toletter(ascii):
+    return chr(int(ascii) + 97) 
+
+def encrypt(message, key): 
+    encryption = key @ message 
+    encryption = np.remainder(encryption, 26) 
+    return encryption
+
+def tomatrix(raw_message, key_rows): 
+    message = []
+    for i in range(0, len(raw_message)):
+        current_letter = (raw_message[i:i+1]).lower()
+        if current_letter != ' ': 
+            letter_index = tonum(current_letter) 
+            message.append(letter_index + 1)
+    message = np.array(message) 
+    message_length = message.shape[0]
+    message.resize(int(message_length/key_rows), key_rows)
+    return message
+
+def encode():
+    message = tomatrix(input, key_rows) 
+    encryptm = "" 
+    for i in range(0, len(message)):
+            encrypted = encrypt(message[i], key) 
+            encryptm = encryptm + toletter(encrypted[0]) + toletter(encrypted[1]) 
+    return encryptm
+
+
+
+

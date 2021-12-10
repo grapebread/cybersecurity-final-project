@@ -12,6 +12,8 @@ mode = sys.argv[3]
 mode = mode.lower()
 key_rows = key.shape[0]
 
+def tonum(letter):
+    return string.ascii_lowercase.index(letter) - 1 
 
 def toletter(ascii):
     return chr(int(ascii) + 97) 
@@ -40,7 +42,3 @@ def encode():
             encrypted = encrypt(message[i], key) 
             encryptm = encryptm + toletter(encrypted[0]) + toletter(encrypted[1]) 
     return encryptm
-
-
-
-

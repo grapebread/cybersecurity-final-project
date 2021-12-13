@@ -27,3 +27,5 @@ def encode():
             encrypted = encrypt(message[i], key) 
             encryptm = encryptm + toletter(encrypted[0]) + toletter(encrypted[1]) 
     return encryptm
+
+print(encode())

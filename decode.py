@@ -1,6 +1,8 @@
 import sys
 import numpy as np
 
+# Note this is only for the 2x2 case
+
 """
 returns the inverse of the matrix parameter in mod 26
 matrix represents some invertible matrix (square numpy array with a non-zero determinant)
@@ -27,6 +29,15 @@ must be a perfect square)
 key must also be an invertible matrix (hence have a zero determinant)
 """
 def decode(cipher_matrix, key):
-    plain_matrix = np.array()
+    plain_matrix = []
+    
+    for i in range(0, len(cipher_matrix), len(key)):
+        chars = []
+        for n in cipher_matrix[i:i + len(key)]:
+            chars.append([n])
+        
+        while (len(chars) < len(key)): chars.append([0])
+
+        plain_matrix.append(np.array(chars))
 
     return plain_matrix

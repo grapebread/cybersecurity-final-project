@@ -41,20 +41,17 @@ key must also be an invertible matrix (hence have a zero determinant)
 """
 def decode(cipher_matrix, key):
     plain_matrix = []
-    
-    for i in range(0, len(cipher_matrix), len(key)):
-        chars = []
-        for n in cipher_matrix[i:i + len(key)]:
-            chars.append([n])
-        
-        while (len(chars) < len(key)): chars.append([0])
+    inverted = inv(key)
 
-        dot = inv(key) @ chars
-
-        for n in dot:
-            plain_matrix.append(n)
+    for n in cipher_matrix:
+        temp = inverted @ n
+        for x in temp: plain_matrix.append(x % 26)
 
     return plain_matrix
+
+if len(sys.argv) < 3:
+    print("Example for input: python decode.py \"key\" \"ciphertext\"")
+    exit()
 
 ciphertext = "".join(sys.argv[2].lower().split())
 key = "".join(sys.argv[1].lower().split())
@@ -63,5 +60,13 @@ n = math.sqrt(len(key))
 if int(n) != n:
     raise Exception("Key is not a square matrix")
 
-cipher_matrix = tomatrix("help", 2)
-key_matrix = tomatrix("ddcf", 2)
+cipher_matrix = tomatrix(ciphertext, int(n))
+key_matrix = tomatrix(key, int(n))
+
+plain_matrix = decode(cipher_matrix, key_matrix)
+
+plaintext = ""
+for n in plain_matrix:
+    plaintext += toletter(n)
+
+print(plaintext)

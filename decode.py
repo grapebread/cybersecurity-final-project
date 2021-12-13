@@ -1,10 +1,10 @@
 import sys
+import math
 import numpy as np
 
-# Note this is only for the 2x2 case
+from util import *
 
-ciphertext = sys.argv[1].lower()
-key = sys.argv[2].lower()
+# Note this is only for the 2x2 case
 
 """
 returns the inverse of the matrix parameter in mod 26
@@ -12,7 +12,6 @@ matrix represents some invertible matrix (square numpy array with a non-zero det
 """
 def inv(matrix):
     det = int(np.linalg.det(matrix))
-    print(det)
     x = 0
     while ((det * x) % 26 != 1): x += 1
 
@@ -34,9 +33,6 @@ def convert(n):
     elif type(n) == str:
         return ord(n.lower()) - 97
 
-for i in "HELP":
-    print(convert(i))
-
 """
 cipher_matrix is a n-component vector (i.e [1, 2, 3, 4, 5])
 key is a square matrix (i.e [[1, 2], [3, 4]] where the number of elements
@@ -53,7 +49,6 @@ def decode(cipher_matrix, key):
         
         while (len(chars) < len(key)): chars.append([0])
 
-        print(chars)
         dot = inv(key) @ chars
 
         for n in dot:
@@ -61,6 +56,12 @@ def decode(cipher_matrix, key):
 
     return plain_matrix
 
-cipher = np.array([[7, 8], [0, 19]])
-key = np.array([[3, 3], [2, 5]])
-#print(decode(cipher, key))
+ciphertext = "".join(sys.argv[2].lower().split())
+key = "".join(sys.argv[1].lower().split())
+
+n = math.sqrt(len(key))
+if int(n) != n:
+    raise Exception("Key is not a square matrix")
+
+cipher_matrix = tomatrix("help", 2)
+key_matrix = tomatrix("ddcf", 2)

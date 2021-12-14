@@ -2,4 +2,4 @@
 
 ## Devlog
 
-12/14 - Josephine: 
+12/14 - Josephine: Outlined presentation and started explaining encryption/decryption.

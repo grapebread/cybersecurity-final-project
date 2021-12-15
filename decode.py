@@ -11,9 +11,8 @@ returns the inverse of the matrix parameter in mod 26
 matrix represents some invertible matrix (square numpy array with a non-zero determinant)
 """
 def inv(matrix):
-    det = int(np.linalg.det(matrix))
-    x = 0
-    while ((det * x) % 26 != 1): x += 1
+    det = round(np.linalg.det(matrix))
+    x = pow(det, -1, 26)
 
     adj = [[matrix[1][1], -1 * matrix[0][1]], [-1 * matrix[1][0], matrix[0][0]]]
     for i in range(len(adj)):
@@ -39,12 +38,12 @@ key is a square matrix (i.e [[1, 2], [3, 4]] where the number of elements
 must be a perfect square)
 key must also be an invertible matrix (hence have a zero determinant)
 """
-def decode(cipher_matrix, key):
+def decode(cipher_matrix, inverted_key):
     plain_matrix = []
-    inverted = inv(key)
+    #inverted_key = inv(key)
 
     for n in cipher_matrix:
-        temp = inverted @ n
+        temp = inverted_key @ n
         for x in temp: plain_matrix.append(x % 26)
 
     return plain_matrix
@@ -53,20 +52,29 @@ if len(sys.argv) < 3:
     print("Example for input: python decode.py \"key\" \"ciphertext\"")
     exit()
 
-ciphertext = "".join(sys.argv[2].lower().split())
+ciphertext = sys.argv[2]
+clean_ciphertext = "".join(ciphertext.lower().split())
 key = "".join(sys.argv[1].lower().split())
 
 n = math.sqrt(len(key))
 if int(n) != n:
-    raise Exception("Key is not a square matrix")
+    print("Key is not a square matrix")
+    exit()
 
 cipher_matrix = tomatrix(ciphertext, int(n))
 key_matrix = tomatrix(key, int(n))
 
-plain_matrix = decode(cipher_matrix, key_matrix)
+inverted = []
+try:
+    inverted = inv(key_matrix)
+except:
+    print("Key matrix is not invertible mod 26")
+    exit()
+
+plain_matrix = decode(cipher_matrix, inverted)
 
 plaintext = ""
-for n in plain_matrix:
+for n in plain_matrix[:len(ciphertext)]:
     plaintext += toletter(n)
 
 print(plaintext)

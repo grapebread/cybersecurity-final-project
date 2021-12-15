@@ -8,6 +8,7 @@ def tomatrix(input, key_rows):
         if current_letter != ' ': 
             letter_index = tonum(current_letter) 
             message.append(letter_index + 1)
+    while (len(message) % key_rows != 0): message.append(0)
     message = np.array(message) 
     message_length = message.shape[0]
     message.resize(int(message_length/key_rows), key_rows)

@@ -1,5 +1,12 @@
 # cybersecurity-final-project: Hill Cipher Demonstration
 
+## Dependencies / Instructions
+Run
+```
+pip install sympy
+```
+to install sympy and run the programs.
+
 ## Devlog
 
 12/14

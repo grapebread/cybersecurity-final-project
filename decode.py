@@ -7,22 +7,6 @@ from util import *
 # Note this is only for the 2x2 case
 
 """
-returns the inverse of the matrix parameter in mod 26
-matrix represents some invertible matrix (square numpy array with a non-zero determinant)
-"""
-def inv(matrix):
-    det = round(np.linalg.det(matrix))
-    x = pow(det, -1, 26)
-
-    adj = [[matrix[1][1], -1 * matrix[0][1]], [-1 * matrix[1][0], matrix[0][0]]]
-    for i in range(len(adj)):
-        for j in range(len(adj[i])):
-            adj[i][j] *= x
-            adj[i][j] %= 26
-
-    return adj
-
-"""
 if n is an int, return corresponding char
 if n is a char, return corresponding int
 """

@@ -28,8 +28,4 @@ def encode():
             encryptm = encryptm + toletter(encrypted[0]) + toletter(encrypted[1]) 
     return encryptm
 
-<<<<<<< HEAD
 print(encode())
-=======
-print(encode())
->>>>>>> e5a099e228ca17333a0870404dbb720e658d215b

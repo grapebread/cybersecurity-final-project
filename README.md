@@ -18,3 +18,7 @@ to install sympy and run the programs.
 
 - Josephine: Worked on breaking the Hill cipher through frequency analysis
 - Shuprovo: After working out known-plaintext attacks on paper, worked on implementing a manual version in code
+
+12/16
+
+- Josephine: Added dependencies/instructions; worked on explaining how the Hill Cipher works in the presentation

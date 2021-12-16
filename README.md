@@ -2,9 +2,12 @@
 
 ## Devlog
 
-12/14 
+12/14
+
 - Josephine: Outlined presentation and started explaining encryption/decryption of Hill Cipher
 - Shuprovo: Continued trying to work out how breaking the Hill cipher through known-plaintext attacks would be implemented (both in class and at home)
 
 12/15
+
 - Josephine: Worked on breaking the Hill cipher through frequency analysis
+- Shuprovo: After working out known-plaintext attacks on paper, worked on implementing a manual version in code

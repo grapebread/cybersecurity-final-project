@@ -22,3 +22,4 @@ to install sympy and run the programs.
 12/16
 
 - Josephine: Added dependencies/instructions; worked on explaining how the Hill Cipher works in the presentation
+- Shuprovo: Continued to work out implementing breaking the cipher; had some issues with the matrix inverse modulo calculations but Mr. K gave us permission to use outside libraries

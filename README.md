@@ -1,5 +1,12 @@
 # cybersecurity-final-project: Hill Cipher Demonstration
 
+## Dependencies / Instructions
+Run
+```
+pip install sympy
+```
+to install sympy and run the programs.
+
 ## Devlog
 
 12/14
@@ -11,3 +18,8 @@
 
 - Josephine: Worked on breaking the Hill cipher through frequency analysis
 - Shuprovo: After working out known-plaintext attacks on paper, worked on implementing a manual version in code
+
+12/16
+
+- Josephine: Added dependencies/instructions; worked on explaining how the Hill Cipher works in the presentation
+- Shuprovo: Continued to work out implementing breaking the cipher; had some issues with the matrix inverse modulo calculations but Mr. K gave us permission to use outside libraries

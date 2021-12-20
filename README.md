@@ -27,3 +27,7 @@ to install sympy and run the programs.
 12/17
 - Josephine: Worked on the presentation and coming up with examples/challenges.
 - Shuprovo: Worked on the presentation and coming up with examples/challenges.
+
+12/20
+- Josephine: Worked on the presentation and coming up with examples/challenges to explain matrix operations and encryption.
+- Shuprovo: Worked on the presentation and coming up with examples/challenges to explain matrix operations and decryption.

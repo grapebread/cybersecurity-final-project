@@ -35,3 +35,6 @@ to install sympy and run the programs.
 12/21
 - Josephine: Finished doing encryption example; came up with encryption challenge.
 - Shuprovo: Finished doing decryption example; started thinking of decryption challenges and ways to upscale our code to higher dimensions
+
+12/22
+- Josephine: Came up with more encryption challenges.

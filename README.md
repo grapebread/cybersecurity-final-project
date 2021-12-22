@@ -1,5 +1,5 @@
 # cybersecurity-final-project: Hill Cipher Demonstration
-
+This is a demonstration of the Hill Cipher. We made encryption and decryption methods and also a method for breaking the cipher.
 ## Dependencies / Instructions
 Run
 ```

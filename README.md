@@ -1,10 +1,15 @@
 # cybersecurity-final-project: Hill Cipher Demonstration
+
 This is a demonstration of the Hill Cipher. We made encryption and decryption methods and also a method for breaking the cipher.
+
 ## Dependencies / Instructions
+
 Run
+
 ```
 pip install sympy
 ```
+
 to install sympy and run the programs.
 
 ## Devlog
@@ -25,16 +30,21 @@ to install sympy and run the programs.
 - Shuprovo: Continued to work out implementing breaking the cipher; had some issues with the matrix inverse modulo calculations but Mr. K gave us permission to use outside libraries
 
 12/17
+
 - Josephine: Worked on the presentation and coming up with examples/challenges.
 - Shuprovo: Worked on the presentation and coming up with examples/challenges.
 
 12/20
+
 - Josephine: Worked on the presentation and coming up with examples/challenges to explain matrix operations and encryption.
 - Shuprovo: Worked on the presentation and coming up with examples/challenges to explain matrix operations and decryption.
 
 12/21
+
 - Josephine: Finished doing encryption example; came up with encryption challenge.
 - Shuprovo: Finished doing decryption example; started thinking of decryption challenges and ways to upscale our code to higher dimensions
 
 12/22
+
 - Josephine: Came up with more encryption challenges.
+- Shuprovo: Fixed some mathematical errors in decryption example, started explaining how to break the cipher through known-plaintext attacks

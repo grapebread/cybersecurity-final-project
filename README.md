@@ -48,3 +48,6 @@ to install sympy and run the programs.
 
 - Josephine: Came up with more encryption challenges.
 - Shuprovo: Fixed some mathematical errors in decryption example, started explaining how to break the cipher through known-plaintext attacks
+
+12/23
+- Josephine: Finished coming up and solving encryption challenges.

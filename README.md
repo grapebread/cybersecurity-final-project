@@ -51,3 +51,6 @@ to install sympy and run the programs.
 
 12/23
 - Josephine: Finished coming up and solving encryption challenges.
+
+1/3
+- Josephine: Completed finishing touches; added sources.

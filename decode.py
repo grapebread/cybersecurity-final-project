@@ -1,6 +1,7 @@
 import sys
 import math
 import numpy as np
+import sympy as sp
 
 from util import *
 
@@ -37,8 +38,8 @@ if len(sys.argv) < 3:
     exit()
 
 ciphertext = sys.argv[2]
-clean_ciphertext = "".join(ciphertext.lower().split())
-key = "".join(sys.argv[1].lower().split())
+clean_ciphertext = "".join([n for n in ciphertext.lower() if n.isalpha()])
+key = "".join([n for n in sys.argv[1].lower() if n.isalpha()])
 
 n = math.sqrt(len(key))
 if int(n) != n:
@@ -50,7 +51,7 @@ key_matrix = tomatrix(key, int(n))
 
 inverted = []
 try:
-    inverted = inv(key_matrix)
+    inverted = sp.Matrix(key_matrix).inv_mod(26)
 except:
     print("Key matrix is not invertible mod 26")
     exit()
@@ -61,4 +62,4 @@ plaintext = ""
 for n in plain_matrix[:len(ciphertext)]:
     plaintext += toletter(n)
 
-print(plaintext)
+print(plaintext.upper())

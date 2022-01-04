@@ -9,7 +9,7 @@ from util import *
 cipher = sys.argv[0]
 known = sys.argv[1]
 location = 0 
-n = math.sqrt(len(location))
+n = math.sqrt(len(known))
 partial_cipher = cipher[location:location+pow(int(n), 2)]
 print(partial_cipher)
 

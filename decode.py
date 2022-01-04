@@ -5,18 +5,6 @@ import sympy as sp
 
 from util import *
 
-# Note this is only for the 2x2 case
-
-"""
-if n is an int, return corresponding char
-if n is a char, return corresponding int
-"""
-def convert(n):
-    if type(n) == int:
-        return chr(n + 97)
-    elif type(n) == str:
-        return ord(n.lower()) - 97
-
 """
 cipher_matrix is a n-component vector (i.e [1, 2, 3, 4, 5])
 key is a square matrix (i.e [[1, 2], [3, 4]] where the number of elements

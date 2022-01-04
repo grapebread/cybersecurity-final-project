@@ -8,9 +8,10 @@ Run
 
 ```
 pip install sympy
+pip install numpy
 ```
 
-to install sympy and run the programs.
+to install sympy and numpy and run the programs.
 
 To encrypt:
 

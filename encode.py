@@ -6,8 +6,6 @@ from util import *
 key = sys.argv[1]
 input = sys.argv[2]
 input = input.lower()
-mode = sys.argv[3]
-mode = mode.lower()
 part1 = tonum(key[0]) + 1
 part2 = tonum(key[1]) + 1
 part3 = tonum(key[2]) + 1

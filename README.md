@@ -27,6 +27,12 @@ To decrypt:
 python3 decode.py <key> <cipher_text>
 ```
 
+To break:
+
+```
+python3 kpa.py <cipher_text> <known_text> <offset_for_known_text>
+```
+
 ## Devlog
 
 12/14
@@ -69,3 +75,4 @@ python3 decode.py <key> <cipher_text>
 
 1/3
 - Josephine: Completed finishing touches; added sources. Came up with decryption challenges.
+- Shuprovo: Cleaned up code by removing redundant code, and stripping inputs. Added sources and came up with breaking challenges.

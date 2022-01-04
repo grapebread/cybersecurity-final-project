@@ -12,6 +12,18 @@ pip install sympy
 
 to install sympy and run the programs.
 
+To encrypt:
+
+```
+python3 encode.py <key> <message_to_encrypt>
+```
+
+To decrypt:
+
+```
+python3 decode.py <key> <cipher_text>
+```
+
 ## Devlog
 
 12/14

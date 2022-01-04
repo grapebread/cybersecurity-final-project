@@ -66,4 +66,4 @@ python3 decode.py <key> <cipher_text>
 - Josephine: Finished coming up and solving encryption challenges.
 
 1/3
-- Josephine: Completed finishing touches; added sources.
+- Josephine: Completed finishing touches; added sources. Came up with decryption challenges.

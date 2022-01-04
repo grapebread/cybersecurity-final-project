@@ -4,6 +4,8 @@ This is a demonstration of the Hill Cipher. We made encryption and decryption me
 
 ## Dependencies / Instructions
 
+Make sure to have at least Python 3.6 installed!
+
 Run
 
 ```
